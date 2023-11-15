@@ -11,14 +11,6 @@ const serverIP = 'mc.universocraft.com';
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-const search = async() => {
-    try {
-        const status = await util.status(serverIP);
-        console.log(status.version);
-      } catch (error) {
-        console.error(error);
-      }
-}
 // rutas
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'root.html'));
@@ -31,6 +23,7 @@ app.post('/', async (req, res) =>{
         console.log(status)
         res.json({ mensaje: status });
       } catch (error) {
+        res.json({ mensaje: null})
         console.error(error);
       }
 })
