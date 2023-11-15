@@ -4,7 +4,7 @@ const util = require('minecraft-server-util');
 
 // inicializando 
 const app = express();
-const puerto = 3000;
+const puerto = process.env.PORT || 3000;
 const ip = '0.0.0.0';
 const serverIP = 'mc.universocraft.com';
 // uses
