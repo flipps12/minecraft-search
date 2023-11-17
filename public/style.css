@@ -8,6 +8,17 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    padding: 15px;
+    margin-top: 60px;
+    word-spacing: 13px;
+    letter-spacing: 1.5px;
+    background-color: rgb(52, 53, 65);
+    box-shadow: 8px 8px rgb(22, 23, 34);
+    border-radius: 5px;
+    font-size: 30px;
+}
+
 @keyframes loading {
     0% {
         transform: rotate(0deg);
@@ -32,12 +43,11 @@ body {
 #Form {
     background-color: rgb(52, 53, 65);
     align-items: center;
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 50px;
     padding: 10px;
     border-radius: 5px;
     width: 60%;
-    border: 0 solid #222;
     box-shadow: 8px 8px rgb(22, 23, 34);
 
     display: flex;
@@ -62,7 +72,15 @@ button:hover {
 button:active {
     background-color: #555;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 input {
     border: none;
     outline: none;
@@ -75,7 +93,21 @@ input {
     background-color: transparent;
     flex: 1;
 }
-
+input::placeholder {
+    color: #888;
+}
+#ip {
+    flex: 8;
+}
+#port {
+    flex: 2;
+    margin-left: 0;
+    border: 0;
+}
+span {
+    font-size: 17px;
+    color: #888;
+}
 .server {
     display: flex;
     margin-top: 50px;
@@ -132,4 +164,37 @@ img {
 
 .players {
     font-size: 18px;
+}
+@media (max-width: 1300px) {
+    img {
+        width: 70px;
+        height: 70px;
+    }
+    input {
+        height: 24px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 750px) {
+    img {
+    }
+    input {
+        height: 27px;
+        font-size: 23px;
+    }
+    .sub-container1 {
+        flex-direction: column-reverse;
+    }
+    .players {
+        float: right;
+    }
+    .name, .html {
+        font-size: 20px;
+    }
+    .players, .version {
+        font-size: 19px;
+    }
+    #port {
+        flex: 3;
+    }
 }

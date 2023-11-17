@@ -45,12 +45,12 @@ const writeHtml = (data) => {
 document.getElementById('Form').addEventListener('submit', function (event) {
   event.preventDefault();
   const username = document.getElementById('ip').value;
-
+  const port = document.getElementById('port').value;
   // Obtener los valores del formulario
-  minecraftSearch(username)
+  minecraftSearch(username, port)
 });
 
-const minecraftSearch = (username) => {
+const minecraftSearch = (username, port) => {
   loading.removeAttribute('hidden')
   // Enviar los datos al servidor mediante una solicitud POST
   fetch('/', {
@@ -58,7 +58,7 @@ const minecraftSearch = (username) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ username }),
+    body: JSON.stringify({ username, port }),
   })
     .then(response => response.json())
     .then(data => {
@@ -72,4 +72,4 @@ const minecraftSearch = (username) => {
       console.error('Error al enviar la solicitud:', error);
     });
 }
-minecraftSearch('mc.universocraft.com')
+minecraftSearch('mc.universocraft.com', '')

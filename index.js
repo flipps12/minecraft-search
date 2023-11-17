@@ -18,9 +18,10 @@ app.get('/', (req, res) => {
 app.post('/', async (req, res) =>{
     let ip = req.body;
     console.log(ip)
+    if (ip.port == '') ip.port = 25565
+    else ip.port = parseInt(ip.port)
     try {
-        const status = await util.status(ip.username);
-        console.log(status)
+        const status = await util.status(ip.username, ip.port);
         res.json({ mensaje: status });
       } catch (error) {
         res.json({ mensaje: null})
