@@ -13,21 +13,20 @@ app.use(express.json());
 
 // rutas
 app.get('/', (req, res) => {
-  res.redirect('https://grabify.link/4OAURZ')
-    //res.sendFile(path.join(__dirname, 'public', 'root.html'));
+  res.sendFile(path.join(__dirname, 'public', 'root.html'));
 });
-app.post('/', async (req, res) =>{
-    let ip = req.body;
-    console.log(ip)
-    if (ip.port == '') ip.port = 25565
-    else ip.port = parseInt(ip.port)
-    try {
-        const status = await util.status(ip.username, ip.port);
-        res.json({ mensaje: status });
-      } catch (error) {
-        res.json({ mensaje: null})
-        console.error(error);
-      }
+app.post('/', async (req, res) => {
+  let ip = req.body;
+  console.log(ip)
+  if (ip.port == '') ip.port = 25565
+  else ip.port = parseInt(ip.port)
+  try {
+    const status = await util.status(ip.username, ip.port);
+    res.json({ mensaje: status });
+  } catch (error) {
+    res.json({ mensaje: null })
+    console.error(error);
+  }
 })
 
 // Escucha
