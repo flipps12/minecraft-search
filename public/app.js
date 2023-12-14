@@ -72,4 +72,6 @@ const minecraftSearch = (username, port) => {
       console.error('Error al enviar la solicitud:', error);
     });
 }
+
+minecraftSearch('mc.bepisgvng.site', '')
 minecraftSearch('mc.universocraft.com', '')
