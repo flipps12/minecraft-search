@@ -74,4 +74,4 @@ const minecraftSearch = (username, port) => {
 }
 
 minecraftSearch('mc.bepisgvng.site', '')
-minecraftSearch('mc.universocraft.com', '')
+//minecraftSearch('mc.universocraft.com', '')
